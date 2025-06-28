@@ -19,3 +19,7 @@ jobs:
         run: firebase deploy --only hosting --project domvio-simplified
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+      - name: Debug: List Firebase Projects
+        run: |
+          echo "Listing Firebase projects from CLI..."
+          firebase projects:list
