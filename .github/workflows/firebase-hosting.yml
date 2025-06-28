@@ -15,7 +15,7 @@ jobs:
       - name: Write Service Account Key
         run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > $HOME/key.json
 
-      - name: Set Env Variable
+      - name: Set GOOGLE_APPLICATION_CREDENTIALS
         run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/key.json" >> $GITHUB_ENV
 
       - name: Install Firebase CLI
