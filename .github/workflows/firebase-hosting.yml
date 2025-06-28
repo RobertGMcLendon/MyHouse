@@ -12,16 +12,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      - name: Write Service Account Key
+        run: echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > $HOME/key.json
+
+      - name: Set Env Variable
+        run: echo "GOOGLE_APPLICATION_CREDENTIALS=$HOME/key.json" >> $GITHUB_ENV
+
       - name: Install Firebase CLI
         run: npm install -g firebase-tools
 
-      - name: Debug - List Firebase Projects
-        run: firebase projects:list
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
       - name: Deploy to Firebase Hosting
         run: firebase deploy --only hosting --project domvio-simplified
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
 
