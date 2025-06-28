@@ -1,7 +1,6 @@
-// firebase.json
 {
   "hosting": {
-    "public": "dist", // or "build" or your static output folder
+    "source": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
