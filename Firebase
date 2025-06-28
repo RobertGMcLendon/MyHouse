@@ -1,1 +1,8 @@
+.firebaserc
+
+{
+  "projects": {
+    "default": "domvio-simplified"
+  }
+}
 
