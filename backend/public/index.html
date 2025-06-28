@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHouse App</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>🏡 Welcome to MyHouse Backend!</h1>
+    <p>This is served from <code>/public/index.html</code></p>
+    <script>
+      fetch('/api/ping')
+        .then(res => res.json())
+        .then(data => console.log('API says:', data));
+    </script>
+  </body>
+</html>
